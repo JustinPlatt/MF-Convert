@@ -1,13 +1,10 @@
-import numpy as np
-import pandas as pd
-import re
-import pdfreader
+import os
+from pathlib import Path
 from pdfreader import PDFDocument, SimplePDFViewer
 import PyPDF2
-import os
 import sys
 import time
-from pathlib import Path
+
 
 def is_valid(choice, file_ct):
     """Check if the report choice is a valid one"""
@@ -18,8 +15,7 @@ def is_valid(choice, file_ct):
     return x
 
 def main():
-
-    print('\n')
+    """Docstring will go here"""
     print('*'*40 +'\nERT PDF TO TXT CONVERTER\n')
     print('Showing PDF files in ' + os.getcwd())
     files = []
@@ -61,7 +57,6 @@ def main():
     #print(Path(u_name + '.txt').is_file())
     #sys.exit()
 
-    #pdfOutputFile = open(u_file, 'wb')
     pdfOutputFile = open('temp_pdf.pdf', 'wb')
     pdfWriter.write(pdfOutputFile)
 
@@ -69,7 +64,6 @@ def main():
     p_pdf.close()
 
     #open the unlocked pdf.  We'll use PDFDocument and SimplePDFViewer to pull all the text
-    #_pdf = open(u_file, "rb")
     u_pdf = open('temp_pdf.pdf', "rb")
     doc = PDFDocument(u_pdf)
     reader = SimplePDFViewer(u_pdf)
@@ -95,7 +89,6 @@ def main():
 
     print('Saved as ' + u_name + '.txt')
     print("This took %s seconds." % round((time.time() - start_time),2))
-
 
 if __name__ == "__main__":
 	main()
