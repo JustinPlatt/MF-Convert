@@ -1,7 +1,7 @@
 ## MF-Convert
-Mainframe-generated PDF to TXT converter.
-
-A first attempt at Git / writing a Python script from scratch
+ERT2TXT: Mainframe-generated PDF (any type of report) to TXT converter.
+AP12176A: Mainframe-generated PDF (invoice report) to XLSX converter:
+A first attempt at Git / regular expressions /  writing a Python script from scratch
 
 ### Purpose:
 I work with reports that are generated from a mainframe system that writes to a PDF by default.  Previous attempts at using the PDF data via copy/paste were burdensome because consecutive spaces would convert to a single space.  This makes it much more difficult to import/manipulate the data.
